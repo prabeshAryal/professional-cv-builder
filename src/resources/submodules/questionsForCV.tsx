@@ -2,6 +2,7 @@
 import { Component } from 'react'
 import Personal_Information from './Personal_Information';
 import Academic_Information from './Academic_Information';
+import ProjectsANDSkills from './ProjectsAndSkills';
 export default class questionsForCV extends Component{
     state = {
         step: 1,
@@ -9,6 +10,8 @@ export default class questionsForCV extends Component{
         firstName: '',
         lastName: '',
         // Personal Address
+        same_country_residence: true,
+        country: '',
         current_address: '',
         current_area: '',
         city: '',
@@ -27,16 +30,16 @@ export default class questionsForCV extends Component{
         education_institution_country: [],
         // Your Education Information
         education_title_name: [],
-        did_you_graduate: [],
-        education_start_date: [],
+        // did_you_graduate: [],
+        // education_start_date: [],
         education_graduation_date: [],
         education_degree: [],
         education_GPA: [],
         education_SAT_GRE_bool: [],
         education_SAT_GRE_score: [],
         // What did you Learn From Education
-        education_wanna_describe: [],
-        education_coursework_thesis: [],
+        education_coursework: [],
+        educational_projects: [],
         // If any study abroad courses
         education_study_abroad: false,
         no_of_study_aborad: 0,
@@ -69,10 +72,10 @@ export default class questionsForCV extends Component{
         activity_description: [],
         // Projects & Skills
         projects_skills: false,
-        projects: [],
-        laboratory_experience: [],
-        technology_experience: [],
-        languages: [],
+        projects: '',
+        laboratory_experience: '',
+        technology_experience: '',
+        languages: '',
         // Additional Information
         interests: [],
         certifications: [],
@@ -121,7 +124,16 @@ export default class questionsForCV extends Component{
                         handleChange={this.handleChange}
                         values={values} />
                 )
-        }
+            case 3:
+                
+                return (
+                    <ProjectsANDSkills
+                        nextStep={this.nextStep}
+                        handleChange={this.handleChange}
+                        values={values} />
+                )
+        }   
+
         
         
         
