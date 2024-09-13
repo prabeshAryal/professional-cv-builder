@@ -82,9 +82,9 @@ export default function App() {
   const [jsonError, setJsonError] = useState(""); // State to store JSON errors
   const [textareaContent, setTextareaContent] = useState("");
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  function toggleVisibility(index) {
+  function toggleVisibility(id) {
     let updatedToggleArr = [...isVisible];
-    updatedToggleArr[index] = !updatedToggleArr[index];
+    updatedToggleArr[id] = !updatedToggleArr[id];
     setIsVisible(updatedToggleArr);
   }
 
@@ -221,20 +221,20 @@ function applyJsonChanges(newJson) {
 
 
   //Display arrays
-  const arrEducationDisplay = educationList.map((education,index) => (
-    <EducationDisplay education={education} key={index} />
+  const arrEducationDisplay = educationList.map((education) => (
+    <EducationDisplay education={education} key={education.id} />
   ));
 
-  const arrWorkDisplay = workActivities.map((activity,index) => (
-    <WorkDisplay workActivity={activity} key={index} />
+  const arrWorkDisplay = workActivities.map((activity) => (
+    <WorkDisplay workActivity={activity} key={activity.id} />
   ));
 
-  const arrSkillsDisplay = skillList.map((skill,index) => (
-    <SkillsDisplay skill={skill} key={index} />
+  const arrSkillsDisplay = skillList.map((skill) => (
+    <SkillsDisplay skill={skill} key={skill.id} />
   ));
 
-  const arrProjectsDisplay = projectActivities.map((activity,index) => (
-    <ProjectDisplay projectActivity={activity} key={index} />
+  const arrProjectsDisplay = projectActivities.map((activity) => (
+    <ProjectDisplay projectActivity={activity} key={activity.id} />
   ));
 
   //Addition handlers
@@ -282,6 +282,7 @@ function handleAddProject() {
   });
   setData({ ...data, projectActivities: updatedProjectActivities });
 }
+
 
   return (
     <>

@@ -1,7 +1,7 @@
 {
     "name": "Prabesh Aryal",
     "socialLinks": [
-        "praabesh",
+        "prabesharyal",
         "prabesharyalnp",
         "prabe.sh",
         "spam@prabe.sh",
@@ -9,44 +9,51 @@
     ],
     "educationList": [
         {
-            "startDate": "2020",
-            "endDate": "2024",
-            "course": "Bachelor’s Degree in Computer Science at Stanford University",
+            "id": "770cc1ca-c320-409e-8ec5-24a973c1d9c4",
+            "startDate": "2017",
+            "endDate": "2021",
+            "course": "Bachelor of Science in Computer Science at Stanford University",
             "grade": "GPA: 4.0/4.0"
         },
         {
-            "startDate": "2018",
-            "endDate": "2020",
+            "id": "f92b9e21-fdde-4b52-810b-2d714ddead1d",
+            "startDate": "2015",
+            "endDate": "2017",
             "course": "High School Diploma at XYZ High School",
             "grade": "Grade: A+"
         }
     ],
     "workActivities": [
         {
+            "id": "e8725b30-df25-44ef-9218-ff18d38e7b42",
             "designation": "Senior Software Engineer",
             "startDate": "Jun 2023",
             "endDate": "present",
             "description": "Leading a team of developers to build scalable cloud applications. Architecting microservices and optimizing database queries. Spearheading the integration of new technologies to enhance system performance."
         },
         {
+            "id": "c5f89a60-539e-4742-8c08-e20e7f0d4a5b",
             "designation": "Software Engineer",
             "startDate": "Jan 2023",
             "endDate": "Jun 2023",
             "description": "Worked on developing scalable microservices architecture and implemented robust APIs for high-traffic applications. Led a team of engineers to enhance product features and improve performance."
         },
         {
+            "id": "6c36df12-70e2-43cd-8b9b-20ac9b6a7c4a",
             "designation": "Intern",
             "startDate": "Jun 2022",
             "endDate": "Dec 2022",
             "description": "Assisted in the development of internal tools and participated in code reviews. Gained experience in various technologies and contributed to several projects with significant impact."
         },
         {
+            "id": "412b20d4-cce2-4b6a-85c2-e7d17d1f8b1d",
             "designation": "Software Engineer",
             "startDate": "Jan 2021",
             "endDate": "Dec 2021",
             "description": "Contributed to the development of a large-scale distributed system at Google, focusing on improving data processing efficiency and reducing latency."
         },
         {
+            "id": "8b10fadc-dc92-4f8c-bad6-e91a53648e50",
             "designation": "Software Developer",
             "startDate": "Jul 2019",
             "endDate": "Dec 2020",
@@ -55,28 +62,33 @@
     ],
     "skillList": [
         {
+            "id": "092bdd1d-fd65-46eb-95e5-bdcd650c9a84",
             "position": "Backend Developer",
             "techstack": "Java, Python, Node.js, Express.js, Django, SQL, NoSQL, C#, .NET"
         },
         {
+            "id": "de3d6b80-bdf3-482d-aaf8-b7854faad917",
             "position": "Frontend Developer",
             "techstack": "React, Angular, HTML, CSS, JavaScript"
         },
         {
-            "position": "DevOps",
+            "id": "4e981ba4-6107-4b7d-824e-798b62f69b9c",
+            "position": "DevOps Engineer",
             "techstack": "Docker, Kubernetes, AWS, CI/CD, GCP, Azure"
         }
     ],
     "projectActivities": [
         {
+            "id": "719eaf77-c36e-42fb-abc7-c52d241c178f",
             "title": "E-commerce Platform",
-            "url": "ecommerce.example.com",
+            "url": "https://ecommerce.example.com",
             "description": "Developed a full-stack e-commerce platform that supports thousands of concurrent users and integrates with various payment gateways. Improved site performance and user experience."
         },
         {
+            "id": "b8a94150-03ad-451f-b0b0-0c6b015c29c8",
             "title": "Data Analysis Tool",
-            "url": "dataanalysis.example.com",
-            "description": "Created a data analysis tool for visualizing and processing large datasets, which resulted in significant time savings for data scientists and analysts."
+            "url": "https://dataanalysis.example.com",
+            "description": "Created a data analysis tool for visualizing and processing large datasets, resulting in significant time savings for data scientists and analysts."
         }
     ]
 }
