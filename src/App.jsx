@@ -1,9 +1,9 @@
 import React, { useRef, useState, useEffect } from "react";
 import ReactToPrint from "react-to-print";
-
+import { v4 as uuid } from "uuid";
 import "./styles/App.css";
 import "./styles/App-responsive.css";
-import { Work, Education, Skills, Project } from "./utils/appClasses";
+// import { Work, Education, Skills, Project } from "./utils/appClasses";
 
 import defaultData from "./defaultData.json"; // Adjust path as needed
 
@@ -31,6 +31,7 @@ import pdfImg from "./assets/icons/pdf.svg";
 import Resume from "./components/resumePart";
 
 export default function App() {
+  // If required don't show in mobile devices 
   //  if (/Mobi|Android/i.test(navigator.userAgent)) {
   //    return (
   //      <div>
@@ -43,8 +44,6 @@ export default function App() {
   //    );
   //  }
 
-  //states
-  //states
   const [data, setData] = useState({
     name: "",
     socialLinks: [],
@@ -53,6 +52,8 @@ export default function App() {
     skillList: [],
     projectActivities: [],
   });
+    const resumeRef = useRef(null);
+
 
   useEffect(() => {
     setData(defaultData); // Load data from defaultData.json on first load
@@ -67,87 +68,6 @@ export default function App() {
     skillList,
     projectActivities,
   } = data;
-  // const [socialLinks, setSocialLinks] = useState([
-  //   "username",
-  //   "username",
-  //   "mysite.com",
-  //   "email@mysite.com",
-  //   "+ 00.0000.000",
-  // ]);
-
-  // const [educationList, setEducationList] = useState([
-  //   {
-  //     startDate: "2030",
-  //     endDate: "present",
-  //     course: "PhD (Subject) at University",
-  //     grade: "GPA: 4.0/4.0",
-  //     id: uuid(),
-  //   },
-  //   {
-  //     startDate: "2023",
-  //     endDate: "2027",
-  //     course: "Bachelor’s Degree at College",
-  //     grade: "GPA: 4.0/4.0",
-  //     id: uuid(),
-  //   },
-  //   {
-  //     startDate: "2022",
-  //     endDate: "2021",
-  //     course: "Class 12th Some Board",
-  //     grade: "Grade",
-  //     id: uuid(),
-  //   },
-  //   {
-  //     startDate: "2021",
-  //     endDate: "2020",
-  //     course: "Class 10th Some Board",
-  //     grade: "Grade",
-  //     id: uuid(),
-  //   },
-  // ]);
-
-  // const [workActivities, setWorkActivities] = useState([
-  //   {
-  //     designation: "Designation",
-  //     startDate: "Jan 2021",
-  //     endDate: "present",
-  //     description:
-  //       "long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width",
-  //     id: uuid(),
-  //   },
-  //   {
-  //     designation: "Designation",
-  //     startDate: "Mar 2019",
-  //     endDate: "Jan 2021",
-  //     description:
-  //       "long long line of blah blah that will wrap when the table fills the column width again, long long line of blah blah that will wrap when the table fills the column width but this time even more long long line of blah blah. again, long long line of blah blah that will wrap when the table fills the column width but this time even more long long line of blah blah",
-  //     id: uuid(),
-  //   },
-  // ]);
-
-  // const [skillList, setSkillList] = useState([
-  //   {
-  //     position: "Some Skills",
-  //     techstack: "This, That, Some of this and that etc.",
-  //     id: uuid(),
-  //   },
-  //   {
-  //     position: "Some More Skills",
-  //     techstack:
-  //       " Also some more of this, Some more that, And some of this and that etc.",
-  //     id: uuid(),
-  //   },
-  // ]);
-
-  // const [projectActivities, setProjectActivities] = useState([
-  //   {
-  //     title: "Some Project",
-  //     url: "something.com",
-  //     description:
-  //       "long long line of blah blah that will wrap when the table fills the column width again, long long line of blah blah that will wrap when the table fills the column width but this time even more long long line of blah blah. again, long long line of blah blah that will wrap when the table fills the column width but this time even more long long line of blah blah",
-  //     id: uuid(),
-  //   },
-  // ]);
 
   const [isVisible, setIsVisible] = useState([
     false,
@@ -243,8 +163,6 @@ Explicit Working Example with some useful information for you : `;
   }
 
   // Apply JSON changes to state
-  // Apply JSON changes to state
-  // Apply JSON changes to state
 function applyJsonChanges(newJson) {
   try {
     const parsedData = JSON.parse(newJson);
@@ -259,47 +177,48 @@ function applyJsonChanges(newJson) {
 }
 
   //Input arrays
-  const arrEducationInputs = educationList.map((education,index) => (
+  const arrEducationInputs = educationList.map((education) => (
     <EducationInput
       education={education}
       educationList={educationList}
       setEducationList={(newList) =>
         setData({ ...data, educationList: newList })
       }
-      key={index}
+      key={education.id} // Ensure each education has a unique `id`
     />
   ));
 
-  const arrWorkInputs = workActivities.map((activity,index) => (
+  const arrWorkInputs = workActivities.map((activity) => (
     <WorkInput
       workActivity={activity}
       workActivities={workActivities}
       setWorkActivities={(newList) =>
         setData({ ...data, workActivities: newList })
       }
-      key={index}
+      key={activity.id} // Ensure each activity has a unique `id`
     />
   ));
 
-  const arrSkillsInputs = skillList.map((skill,index) => (
+  const arrSkillsInputs = skillList.map((skill) => (
     <SkillsInput
       skill={skill}
       skillList={skillList}
       setSkillList={(newList) => setData({ ...data, skillList: newList })}
-      key={index}
+      key={skill.id} // Ensure each skill has a unique `id`
     />
   ));
 
-  const arrProjectInputs = projectActivities.map((activity,index) => (
+  const arrProjectInputs = projectActivities.map((activity) => (
     <ProjectInput
       projectActivity={activity}
       projectActivities={projectActivities}
       setProjectActivities={(newList) =>
         setData({ ...data, projectActivities: newList })
       }
-      key={index}
+      key={activity.id} // Ensure each project has a unique `id`
     />
   ));
+
 
   //Display arrays
   const arrEducationDisplay = educationList.map((education,index) => (
@@ -319,44 +238,51 @@ function applyJsonChanges(newJson) {
   ));
 
   //Addition handlers
-  //Addition handlers
-  function handleAddEducation() {
-let updatedEducationList = [...educationList];
-updatedEducationList.push({}); // Just push an empty object or a default education object
-setData({ ...data, educationList: updatedEducationList });
-  }
+function handleAddEducation() {
+  let updatedEducationList = [...educationList];
+  updatedEducationList.push({
+    id: uuid(), // Add a unique ID here
+    startDate: "",
+    endDate: "",
+    course: "",
+    grade: "",
+  });
+  setData({ ...data, educationList: updatedEducationList });
+}
 
-   function handleAddWork() {
-     let updatedWorkActivities = [...workActivities];
-     updatedWorkActivities.push({}); // Push an empty object or a default work activity object
-     setData({ ...data, workActivities: updatedWorkActivities });
-   }
+function handleAddWork() {
+  let updatedWorkActivities = [...workActivities];
+  updatedWorkActivities.push({
+    id: uuid(), // Add a unique ID here
+    designation: "",
+    startDate: "",
+    endDate: "",
+    description: "",
+  });
+  setData({ ...data, workActivities: updatedWorkActivities });
+}
 
-   function handleAddSkills() {
-     let updatedSkillList = [...skillList];
-     updatedSkillList.push({}); // Push an empty object or a default skill object
-     setData({ ...data, skillList: updatedSkillList });
-   }
+function handleAddSkills() {
+  let updatedSkillList = [...skillList];
+  updatedSkillList.push({
+    id: uuid(), // Add a unique ID here
+    position: "",
+    techstack: "",
+  });
+  setData({ ...data, skillList: updatedSkillList });
+}
 
-   function handleAddProject() {
-     let updatedProjectActivities = [...projectActivities];
-     updatedProjectActivities.push({}); // Push an empty object or a default project activity object
-     setData({ ...data, projectActivities: updatedProjectActivities });
-   }
+function handleAddProject() {
+  let updatedProjectActivities = [...projectActivities];
+  updatedProjectActivities.push({
+    id: uuid(), // Add a unique ID here
+    title: "",
+    url: "",
+    description: "",
+  });
+  setData({ ...data, projectActivities: updatedProjectActivities });
+}
 
-  //   const { printReactNode } = usePrint();
-  //states
-
-
-  const resumeRef = useRef(null);
-
-  //  const handlePrint = () => {
-  //    if (resumeRef) {
-  //      window.print(); // This triggers the print dialog
-  //    } else {
-  //      console.error("Resume content is not available!");
-  //    }
-  //  };
   return (
     <>
       <div className="main-container">
