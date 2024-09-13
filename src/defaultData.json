@@ -1,0 +1,82 @@
+{
+    "name": "Prabesh Aryal",
+    "socialLinks": [
+        "praabesh",
+        "prabesharyalnp",
+        "prabe.sh",
+        "spam@prabe.sh",
+        "+9779812345678"
+    ],
+    "educationList": [
+        {
+            "startDate": "2020",
+            "endDate": "2024",
+            "course": "Bachelor’s Degree in Computer Science at Stanford University",
+            "grade": "GPA: 4.0/4.0"
+        },
+        {
+            "startDate": "2018",
+            "endDate": "2020",
+            "course": "High School Diploma at XYZ High School",
+            "grade": "Grade: A+"
+        }
+    ],
+    "workActivities": [
+        {
+            "designation": "Senior Software Engineer",
+            "startDate": "Jun 2023",
+            "endDate": "present",
+            "description": "Leading a team of developers to build scalable cloud applications. Architecting microservices and optimizing database queries. Spearheading the integration of new technologies to enhance system performance."
+        },
+        {
+            "designation": "Software Engineer",
+            "startDate": "Jan 2023",
+            "endDate": "Jun 2023",
+            "description": "Worked on developing scalable microservices architecture and implemented robust APIs for high-traffic applications. Led a team of engineers to enhance product features and improve performance."
+        },
+        {
+            "designation": "Intern",
+            "startDate": "Jun 2022",
+            "endDate": "Dec 2022",
+            "description": "Assisted in the development of internal tools and participated in code reviews. Gained experience in various technologies and contributed to several projects with significant impact."
+        },
+        {
+            "designation": "Software Engineer",
+            "startDate": "Jan 2021",
+            "endDate": "Dec 2021",
+            "description": "Contributed to the development of a large-scale distributed system at Google, focusing on improving data processing efficiency and reducing latency."
+        },
+        {
+            "designation": "Software Developer",
+            "startDate": "Jul 2019",
+            "endDate": "Dec 2020",
+            "description": "Worked on various client projects at Amazon Web Services, enhancing the functionality and performance of existing tools and services."
+        }
+    ],
+    "skillList": [
+        {
+            "position": "Backend Developer",
+            "techstack": "Java, Python, Node.js, Express.js, Django, SQL, NoSQL, C#, .NET"
+        },
+        {
+            "position": "Frontend Developer",
+            "techstack": "React, Angular, HTML, CSS, JavaScript"
+        },
+        {
+            "position": "DevOps",
+            "techstack": "Docker, Kubernetes, AWS, CI/CD, GCP, Azure"
+        }
+    ],
+    "projectActivities": [
+        {
+            "title": "E-commerce Platform",
+            "url": "ecommerce.example.com",
+            "description": "Developed a full-stack e-commerce platform that supports thousands of concurrent users and integrates with various payment gateways. Improved site performance and user experience."
+        },
+        {
+            "title": "Data Analysis Tool",
+            "url": "dataanalysis.example.com",
+            "description": "Created a data analysis tool for visualizing and processing large datasets, which resulted in significant time savings for data scientists and analysts."
+        }
+    ]
+}

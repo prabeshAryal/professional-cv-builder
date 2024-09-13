@@ -1,0 +1,56 @@
+# Node modules directory
+node_modules/
+# Ignore defaultDatapriv.json
+# defaultDatapriv.json
+*.json
+
+# Ensure defaultData.json is not ignored
+!defaultData.json
+
+# Build output
+build/
+dist/
+
+# Environment files
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# Package lock files (optional, depending on whether you use npm or yarn)
+package-lock.json
+yarn.lock
+
+# Next.js build output (if using Next.js)
+.next/
+
+# Storybook build output (if using Storybook)
+.out/
+
+# Coverage reports (if using code coverage tools)
+coverage/
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+
+# Miscellaneous
+*.log
+*.sublime-project
+*.sublime-workspace
+*.npmrc
