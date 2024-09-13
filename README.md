@@ -27,7 +27,7 @@ npm run dev
 >- STEP 1 : Give all your infos to LLM's and say it to give information in same format as shown in json `</>` box. 
 <center>OR</center>
 
->- Just Make a CV using GUI in browser (save json to [defaultData.json]('src\defaultData.json') file for future use).
+>- STEP 1 : Just Make a CV using GUI in browser (save json to [defaultData.json]('src\defaultData.json') file for future use).
 
 >- Paste the job description in Prompt Generator Box
 >- Copy Prompt and Paste in any LLM's like [ChatGPT](https://chatgpt.com) and [Gemini](https://gemini.google.com)
