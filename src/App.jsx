@@ -80,7 +80,7 @@ export default function App() {
   const [showJSON, setShowJSON] = useState(false); // For toggling JSON textarea
   const [jsonInput, setJsonInput] = useState(""); // To store textarea input
   const [jsonError, setJsonError] = useState(""); // State to store JSON errors
-  const [textareaContent, setTextareaContent] = useState("");
+  const [jobDescriptionContent, setjobDescriptionContent] = useState("");
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   function toggleVisibility(id) {
     let updatedToggleArr = [...isVisible];
@@ -108,17 +108,6 @@ export default function App() {
   }
 
   const promptGenerator = () => {
-    const sys_prompt = `Generate a Professional CV
-Instructions:
-
-Please create a professional CV in JSON format based on the following skillsets and job description. Ensure the CV is clear, professional, and well-organized. The CV should include the following sections:
-
-Personal Details: Name, social links (with usernames displayed but links behind the keys), email, and phone number.
-Education: List of educational qualifications including start and end dates, course details, and grades.
-Work Experience: Detailed descriptions of work experience, including designation, start and end dates, and key responsibilities.
-Skills: List of relevant skills and technologies with a brief description.
-Projects: Information about notable projects, including titles, URLs, and descriptions.`;
-
     const currJSON = JSON.stringify(
       {
         name,
@@ -131,19 +120,19 @@ Projects: Information about notable projects, including titles, URLs, and descri
       null,
       2
     );
-    const json_prompt = `Provide Data in JSON Format
-Instructions:
+    const sys_prompt = `First, carefully read and understand the job requirements:
+${jobDescriptionContent}
 
-Please provide the following data in JSON format for inclusion in the CV:
+Create a professional CV in JSON format that aligns with the provided job description. 
 
-Personal Details: Include keys for name, social links (with proper link formatting), email, and phone number.
-Education List: Each entry should include start and end dates, course name, and grade.
-Work Activities: Each entry should include designation, start and end dates, and a description of responsibilities.
-Skill List: Each entry should include skill position and techstack.
-Project Activities: Each entry should include title, URL, and description.
-Explicit Working Example with some useful information for you : `;
+When generating the CV, remove or add sections as necessary to fit the job description. Assign a unique ID to each section (Education, Work Experience, Skills, and Projects).
 
-    return `${sys_prompt}\n\n${textareaContent}\n\n${json_prompt}\n\n${currJSON}`;
+Here's a JSON which has more than required information, but may not pass ATS tests for CV's. Modify it to fit all job requirements to get accepted by the above given job requirements while making it concise. Don't change the data in personal details section and education par. You're free to Change after that. 
+
+${currJSON}
+`;
+
+    return sys_prompt;
   };
   const handleButtonClick = () => {
     setIsDialogOpen(!isDialogOpen);
@@ -357,8 +346,8 @@ function handleAddProject() {
             isOpen={isDialogOpen}
             onClose={() => setIsDialogOpen(false)}
             onCopy={handleCopyToClipboard}
-            textareaContent={textareaContent}
-            setTextareaContent={setTextareaContent}
+            jobDescriptionContent={jobDescriptionContent}
+            setjobDescriptionContent={setjobDescriptionContent}
           />
 
           <div className="personal-input">
