@@ -3,7 +3,7 @@
 A React app for making CV Letters using the Harvard letter format. I had idea way longer ago, but [this](https://github.com/mathdebate09/openn-resume) motivated me as it solved my initial problems. I rebased the OG code, fixed all the issues and made it the best possible to fit all of our needs at once. 
 
 # Live Preview
-[Live Preview](https://websites-383320.web.app/)
+[Live Preview](https://prabe.sh/) (Unavailable for now❌)
 
 ## Features 
 >- Make new standard CV within 30 seconds.
